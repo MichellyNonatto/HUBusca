@@ -1,8 +1,9 @@
-import { Title } from "./globals"
+import Navbar from "./components/navbar/page"
+
 export default function Home() {
   return (
-    <div>
-      <Title>Hello Word!</Title>
-    </div>
+    <main>
+      <Navbar/>
+    </main>
   )
 }

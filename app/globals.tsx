@@ -1,8 +1,17 @@
 'use client'
-import styled from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
+import { theme } from './theme';
 
-export const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: #BF4F74;
-`;
+
+const GlobalStyle = createGlobalStyle`
+    html {
+        background-color: ${theme.colors['background-primary']};
+        padding: 1rem 2rem;
+    }
+
+    * {
+        color: ${theme.colors['font-primary']};
+    }    
+`
+
+export default GlobalStyle;
