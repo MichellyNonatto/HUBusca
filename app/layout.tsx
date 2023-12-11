@@ -2,7 +2,7 @@ import GlobalStyle from "./globals"
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
-const poppins = Poppins({ subsets: ['latin'], weight: ['300', '700'] })
+const poppins = Poppins({ subsets: ['latin'], weight: ['300', '500', '700'] })
 
 export const metadata: Metadata = {
   title: 'HUBusca',

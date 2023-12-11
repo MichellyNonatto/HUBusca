@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import styled from "styled-components"
 import { theme } from "@/app/theme"
 
-export interface InputValues {
+interface InputValues {
     values: {
         'placeholder': string;
         'icon': React.ReactNode;
@@ -21,6 +21,7 @@ const SearchContainer = styled.div`
     transition: all .1s;
     width: 90%;
     max-width: 45rem;
+    height: min-content;
 
     &:hover,
     &:focus-within {
@@ -30,6 +31,7 @@ const SearchContainer = styled.div`
 `
 
 const CustomInput = styled.input`
+    align-items: center;
     background-color: ${theme.colors['background-input']};
     border: 2px solid ${theme.colors['background-input']};
     color: ${theme.colors['font-secondary']};
@@ -47,21 +49,24 @@ const CustonIcon = styled.i`
     }
 `
 
-export const InputSearch: React.FC<InputValues> = ({ values }) => (
-    <SearchContainer>
-        <CustonIcon>{values.icon}</CustonIcon>
-        <CustomInput placeholder={values.placeholder} />
-    </SearchContainer>
-);
+export const Nav = styled.nav`
+    display: inline-block;
+    gap: 25%;
+    width: 100%;
+    @media screen and (min-width: 768px){
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+`
 
-export const Nav = styled.div`
+
+export const NavContainer = styled.div`
     align-items: center;
     display: flex;
     justify-content: space-between;
-    gap: 25%;
-    width: 100%;
-
-    @media screen and (min-width: 760px){
+    
+    @media screen and (min-width: 768px){
         justify-content: start;
         gap: 25%;
     } 
@@ -71,13 +76,20 @@ export const Logo = styled.h1`
     font-size: 1rem;
     font-weight: 700;
 
-    @media screen and (min-width: 760px){
+    @media screen and (min-width: 768px){
         font-size: 2rem;
     }
-`
+    `
 
 export const Toggle = styled.button`
     background-color: transparent;
     border: 0px solid transparent;
     font-size: 1.5rem;
-`
+    `
+
+export const InputSearch: React.FC<InputValues> = ({ values }) => (
+    <SearchContainer>
+        <CustonIcon>{values.icon}</CustonIcon>
+        <CustomInput placeholder={values.placeholder} />
+    </SearchContainer>
+);
