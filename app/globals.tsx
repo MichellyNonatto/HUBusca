@@ -16,6 +16,12 @@ const GlobalStyle = createGlobalStyle`
         color: ${theme.colors['font-primary']};
     }    
 
+    ul, 
+    ol, 
+    li {
+        padding: 0;
+    }
+
 `
 
 export default GlobalStyle;

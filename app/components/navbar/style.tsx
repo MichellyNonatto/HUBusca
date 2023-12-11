@@ -17,7 +17,7 @@ const SearchContainer = styled.div`
     color: ${theme.colors['font-secondary']};
     display: flex;
     gap: .5rem;
-    margin: 0px auto;
+    margin: auto;
     padding: .5rem 1rem;
     transition: all .1s;
     width: 90%;

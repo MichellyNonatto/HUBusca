@@ -1,6 +1,7 @@
 import GlobalStyle from "./globals"
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
+import StyledComponentsRegistry from './lib/registry';
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['300', '500', '700'] })
 
@@ -17,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={poppins.className}>
-        <GlobalStyle />
-        {children}
+        <StyledComponentsRegistry>
+          <GlobalStyle />
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   )

@@ -27,16 +27,16 @@ const Title = styled.h3`
 
 const Description = styled.p`
     color: ${theme.colors['font-secondary']};
+    margin: auto;
     margin-bottom: 2rem;
+    @media screen and (min-width: 1024px){
+        max-width: 60%;
+    }
 `
 
 const TextContainer = styled.div`
     margin: 3rem auto;
     text-align: center;
-    width: fit-content;
-    @media screen and (min-width: 1024px){
-        max-width: 35%;
-    }
 `
 
 export const Text: React.FC<TextValues> = ({ values }) => (
