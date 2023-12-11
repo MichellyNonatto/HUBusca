@@ -34,7 +34,7 @@ const TextContainer = styled.div`
     margin: 3rem auto;
     text-align: center;
     width: fit-content;
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 1024px){
         max-width: 35%;
     }
 `

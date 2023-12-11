@@ -5,8 +5,8 @@ import { theme } from './theme';
 
 const GlobalStyle = createGlobalStyle`
     html {
+        padding: 1rem 1.5rem;
         background-color: ${theme.colors['background-primary']};
-        padding: 1rem 2rem;
         @media screen and (min-width: 2560px){
                 font-size: 32px;
         }

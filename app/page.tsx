@@ -5,19 +5,22 @@ import Aside from './layout/aside/page';
 import Main from './layout/main/page';
 
 export default function Home() {
-  const [windowWidth, setWindowWidth] = useState(window.screen.width);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
+    if (typeof window !== 'undefined') {
+      setWindowWidth(window.screen.width);
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
     };
   }, []);
 
-  const isLargeScreen = windowWidth > 768;
+  const isLargeScreen = windowWidth >= 768;
 
   return (
     <main>

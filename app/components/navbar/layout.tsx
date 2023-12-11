@@ -4,7 +4,7 @@ import { IoIosMenu, IoMdSearch, IoMdClose } from 'react-icons/io';
 
 export default function Navbar() {
     const [state, setState] = useState(false);
-    const [windowWidth, setWindowWidth] = useState(window.screen.width);
+    const [windowWidth, setWindowWidth] = useState(0);
     const inputSearchValues = {
         placeholder: 'Pesquisar',
         icon: <IoMdSearch />,
@@ -12,12 +12,15 @@ export default function Navbar() {
     };
 
     useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        };
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
+        if (typeof window !== 'undefined') {
+            setWindowWidth(window.screen.width);
+            const handleResize = () => {
+                setWindowWidth(window.innerWidth);
+            };
+            window.addEventListener('resize', handleResize);
+            return () => {
+                window.removeEventListener('resize', handleResize);
+            };
         };
     }, []);
 
@@ -25,7 +28,7 @@ export default function Navbar() {
         <Nav>
             <NavContainer>
                 <Logo>HUBusca</Logo>
-                {windowWidth <= 768 && (
+                {windowWidth < 1024 && (
                     <Toggle onClick={() => setState((prevState) => !prevState)}>
                         {!state ? <IoIosMenu /> : <IoMdClose />}
                     </Toggle>
