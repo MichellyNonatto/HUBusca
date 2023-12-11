@@ -4,7 +4,7 @@ import { IoIosMenu, IoMdSearch, IoMdClose } from 'react-icons/io';
 
 export default function Navbar() {
     const [state, setState] = useState(false);
-    const [windowWidth, setWindowWidth] = useState(0);
+    const [windowWidth, setWindowWidth] = useState(window.screen.width);
     const inputSearchValues = {
         placeholder: 'Pesquisar',
         icon: <IoMdSearch />,
