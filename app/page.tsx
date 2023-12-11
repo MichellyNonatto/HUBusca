@@ -5,7 +5,7 @@ import Aside from './layout/aside/page';
 import Main from './layout/main/page';
 
 export default function Home() {
-  const [windowWidth, setWindowWidth] = useState(window.screen.width);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {

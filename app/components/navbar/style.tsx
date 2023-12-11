@@ -17,6 +17,7 @@ const SearchContainer = styled.div`
     color: ${theme.colors['font-secondary']};
     display: flex;
     gap: .5rem;
+    margin: auto;
     padding: .5rem 1rem;
     transition: all .1s;
     width: 90%;
@@ -53,7 +54,7 @@ export const Nav = styled.nav`
     display: inline-block;
     gap: 25%;
     width: 100%;
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 1024px){
         align-items: center;
         display: flex;
         justify-content: space-between;
@@ -66,8 +67,8 @@ export const NavContainer = styled.div`
     display: flex;
     justify-content: space-between;
     
-    @media screen and (min-width: 768px){
-        justify-content: start;
+    @media screen and (min-width: 1024px){
+        display: inline-block;
         gap: 25%;
     } 
 `

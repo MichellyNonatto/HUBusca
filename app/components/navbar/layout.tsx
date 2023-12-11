@@ -25,7 +25,7 @@ export default function Navbar() {
         <Nav>
             <NavContainer>
                 <Logo>HUBusca</Logo>
-                {windowWidth <= 768 && (
+                {windowWidth < 1024 && (
                     <Toggle onClick={() => setState((prevState) => !prevState)}>
                         {!state ? <IoIosMenu /> : <IoMdClose />}
                     </Toggle>
