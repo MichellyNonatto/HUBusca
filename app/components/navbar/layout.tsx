@@ -15,11 +15,7 @@ export default function Navbar() {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
         };
-
-        // Adiciona o ouvinte de redimensionamento do navegador ao montar o componente
         window.addEventListener('resize', handleResize);
-
-        // Remove o ouvinte de redimensionamento ao desmontar o componente
         return () => {
             window.removeEventListener('resize', handleResize);
         };
