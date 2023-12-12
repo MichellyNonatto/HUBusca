@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from 'react';
 import Message from '@/app/components/message/layout';
 import { getGitHubData } from '@/app/services/request';
