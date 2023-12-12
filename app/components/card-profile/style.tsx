@@ -7,9 +7,12 @@ export const Card = styled.div`
     background-color: ${theme.colors["background-card"]};
     border-radius: .5rem;
     padding: 1.5rem;
-    text-align: center;
     
     box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+
+    @media screen and (max-width: 765px){ 
+        text-align: center;
+    }
 
     @media screen and (min-width: 1024px){
         display: flex;
@@ -40,6 +43,10 @@ export const TextHeader = styled.div`
     align-items: center;
     display: flex;
     justify-content: space-between;
+    
+    @media screen and (min-width: 1024px){
+        width: 37.375rem;
+    }
 `
 
 export const Locale = styled.p`

@@ -3,8 +3,18 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/navbar/layout';
 import Aside from './layout/aside/page';
 import Main from './layout/main/page';
+import styled from 'styled-components';
+
+const Container = styled.div`
+margin-top: 4rem;
+@media screen and (min-width: 1024px){
+  display: flex;
+  justify-content: space-between;
+}
+`
 
 export default function Home() {
+
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
@@ -26,10 +36,10 @@ export default function Home() {
   return (
     <main>
       <Navbar/>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4rem' }}>
+      <Container>
         <Main/>
         {isLargeScreen && windowWidth >= 1024 && <Aside />}
-      </div>
+      </Container>
     </main>
   );
 }
