@@ -10,7 +10,7 @@ interface GitHubData {
 
 export async function getGitHubData(username: string): Promise<GitHubData> {
   try {
-    const token = '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';
+    const token = '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';
     const response: AxiosResponse<GitHubData> = await axios.get(`https://api.github.com/users/${username}`, {
       headers: {
         Authorization: `Bearer ${token}`,
