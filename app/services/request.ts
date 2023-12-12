@@ -5,12 +5,13 @@ interface GitHubData {
   avatar_url: string;
   bio: string;
   location: string;
-  login: string; // Corrigido para incluir o nickname (login)
+  login: string;
 }
 
 export async function getGitHubData(username: string): Promise<GitHubData> {
   try {
-    const token = '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';
+    require('dotenv').config();
+    const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
     const response: AxiosResponse<GitHubData> = await axios.get(`https://api.github.com/users/${username}`, {
       headers: {
         Authorization: `Bearer ${token}`,
