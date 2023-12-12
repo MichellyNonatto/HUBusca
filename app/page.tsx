@@ -17,19 +17,18 @@ export default function Home() {
       return () => {
         window.removeEventListener('resize', handleResize);
       };
-    };
+    }
   }, []);
+
 
   const isLargeScreen = windowWidth >= 768;
 
   return (
     <main>
-      <Navbar />
-      <div style={{ display: 'flex' }}>
-        <Main />
-        {isLargeScreen && windowWidth >= 1024 && (
-          <Aside />
-        )}
+      <Navbar/>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4rem' }}>
+        <Main/>
+        {isLargeScreen && windowWidth >= 1024 && <Aside />}
       </div>
     </main>
   );

@@ -10,8 +10,8 @@ const Titulo = styled.h4`
 
 export default function Aside() {
     return (
-        <aside style={{ width: '20%', padding: '0px 1rem' }}>
-            <Titulo>Pesquisas Ressentes</Titulo>
+        <aside style={{width: '20%'}}>
+            <Titulo>Pesquisas Recentes:</Titulo>
             <ul>
                 <li>
                     <CardRecent/>

@@ -1,9 +1,9 @@
-import Message from "@/app/components/message/layout"
+import Profile from './profile/page';
 
 export default function Main() {
-    return (
-        <section>
-            <Message/>
-        </section>
-    )
+  return (
+    <section>
+     <Profile/>
+    </section>
+  );
 }

@@ -1,16 +1,16 @@
-"use client";
 import styled from "styled-components"
 import { theme } from "@/app/theme"
+import React, { useState } from 'react';
 
 interface InputValues {
     values: {
         'placeholder': string;
         'icon': React.ReactNode;
         'type': string
-    }
+    };
 }
 
-const SearchContainer = styled.div`
+const SearchContainer = styled.form`
     background-color: ${theme.colors['background-input']};
     border: 2px solid ${theme.colors['background-primary']};
     border-radius: 1.75rem;
@@ -88,9 +88,24 @@ export const Toggle = styled.button`
     font-size: 1.5rem;
     `
 
-export const InputSearch: React.FC<InputValues> = ({ values }) => (
-    <SearchContainer>
+export const InputSearch: React.FC<InputValues> = ({ values }) => {
+    const [inputValue, setInputValue] = useState('');
+  
+    const handleSubmit = (event: React.FormEvent) => {
+      event.preventDefault();
+      console.log('Input value:\t', inputValue)
+      window.location.href = `/?query=${inputValue}`;
+    };
+  
+    return ( 
+      <SearchContainer onSubmit={handleSubmit} method="get">
         <CustonIcon>{values.icon}</CustonIcon>
-        <CustomInput placeholder={values.placeholder} />
-    </SearchContainer>
-);
+        <CustomInput
+          type={values.type}
+          placeholder={values.placeholder}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+      </SearchContainer>
+    );
+  };
