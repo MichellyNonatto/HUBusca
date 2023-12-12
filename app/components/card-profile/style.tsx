@@ -4,6 +4,7 @@ import { theme } from "@/app/theme";
 
 
 export const Card = styled.div`
+    cursor: pointer;
     background-color: ${theme.colors["background-card"]};
     border-radius: .5rem;
     padding: 1.5rem;
@@ -19,6 +20,10 @@ export const Card = styled.div`
         gap: 1.5rem;
         margin: 0px 2rem;
     }
+    transition: 5ms ease-in-out;
+    &:hover{
+        opacity: .8;
+    }
 `
 
 interface AvatarProps {
@@ -33,16 +38,13 @@ export const Avatar = styled.div<AvatarProps>`
     margin: auto;
     width: 6rem;
     height: 6rem;
-    transition: 1s ease-in-out;
-    &:hover{
-        opacity: .8;
-    }
 `;
 
 export const TextHeader = styled.div`
     align-items: center;
     display: flex;
     justify-content: space-between;
+    min-width: 100%;
     
     @media screen and (min-width: 1024px){
         width: 37.375rem;
