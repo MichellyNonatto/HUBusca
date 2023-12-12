@@ -19,7 +19,7 @@ export default function Profile() {
         const data = await getGitHubData(queryValue || '');
         setGithubData(data);
       } catch (error) {
-        console.error('Erro ao obter dados do GitHub:', error);
+        console.log('Erro ao obter dados do GitHub:', error);
         setGithubData(null);
       }
     };

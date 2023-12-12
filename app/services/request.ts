@@ -17,7 +17,6 @@ export async function getGitHubData(username: string): Promise<GitHubData> {
       },
     });
 
-    // Verifica se a resposta foi bem-sucedida antes de desestruturar
     if (response.status === 200) {
       const { name, avatar_url, bio, location, login } = response.data;
       return { name, avatar_url, bio, location, login };
@@ -25,7 +24,6 @@ export async function getGitHubData(username: string): Promise<GitHubData> {
       throw new Error(`Erro na requisição à API do GitHub. Status: ${response.status}`);
     }
   } catch (error) {
-    console.error('Erro na requisição à API do GitHub:', error.message);
     throw error;
   }
 }
