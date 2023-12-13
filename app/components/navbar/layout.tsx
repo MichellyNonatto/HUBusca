@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Logo, NavContainer, Nav, InputSearch, Toggle } from './style';
 import { IoIosMenu, IoMdSearch, IoMdClose } from 'react-icons/io';
+import Aside from '@/app/layout/aside/page';
 
-export default function Navbar() {
+interface NavbarProps {
+  toggleState: boolean;
+  toggleHandler: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export default function Navbar({ toggleState, toggleHandler }:NavbarProps) {
   const [state, setState] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
-  
+
   const inputSearchValues = {
     placeholder: 'Pesquisar',
     icon: <IoMdSearch />,
@@ -30,8 +35,8 @@ export default function Navbar() {
       <NavContainer>
         <Logo>HUBusca</Logo>
         {windowWidth < 1024 && (
-          <Toggle onClick={() => setState((prevState) => !prevState)}>
-            {!state ? <IoIosMenu /> : <IoMdClose />}
+          <Toggle onClick={() => toggleHandler((prevState) => !prevState)}>
+            {!toggleState ? <IoIosMenu /> : <IoMdClose />}
           </Toggle>
         )}
       </NavContainer>

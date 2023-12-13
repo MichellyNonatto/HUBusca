@@ -15,8 +15,12 @@ const Container = styled.div`
 `
 
 export default function Home() {
-
   const [windowWidth, setWindowWidth] = useState(0);
+  const [toggleState, setToggleState] = useState(false);
+  
+  const toggleHandler = (prevState) => {
+    setToggleState(prevState);
+  };
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -36,9 +40,10 @@ export default function Home() {
 
   return (
     <main>
-      <Navbar/>
+      <Navbar toggleState={toggleState} toggleHandler={toggleHandler} />
       <Container>
-        <Main/>
+        {toggleState ? <Aside /> : <Main />}
+        {isLargeScreen && windowWidth >= 1024 && !toggleState && <Aside />}
         {isLargeScreen && windowWidth >= 1024 && <Aside />}
       </Container>
     </main>
