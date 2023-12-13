@@ -44,7 +44,6 @@ export default function Home() {
       <Container>
         {toggleState ? <Aside /> : <Main />}
         {isLargeScreen && windowWidth >= 1024 && !toggleState && <Aside />}
-        {isLargeScreen && windowWidth >= 1024 && <Aside />}
       </Container>
     </main>
   );

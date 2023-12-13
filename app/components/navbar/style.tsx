@@ -44,8 +44,10 @@ const CustomInput = styled.input`
 `
 
 const CustonIcon = styled.i`
-    font-size: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
     * {
+        vertical-align: middle;
        color: ${theme.colors['font-secondary']};
     }
 `
@@ -78,18 +80,14 @@ export const NavContainer = styled.div`
 `
 
 export const Logo = styled.h1`
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 700;
-
-    @media screen and (min-width: 768px){
-        font-size: 2rem;
-    }
     `
 
 export const Toggle = styled.button`
     background-color: transparent;
     border: 0px solid transparent;
-    font-size: 1.5rem;
+    font-size: 2rem;
     `
 
 export const InputSearch: React.FC<InputValues> = ({ values }) => {
