@@ -65,7 +65,7 @@ export default function Aside() {
     }
   }, [query]);
 
-  
+
   const handleClearHistory = () => {
     setRecentSearches([]);
     localStorage.removeItem('recentSearches');
@@ -77,9 +77,11 @@ export default function Aside() {
       <ButtonDelete onClick={handleClearHistory}>Limpar Histórico</ButtonDelete>
       <ul>
         {recentSearches.map((search, index) => (
-          <li key={index}>
-            <CardRecent user={search}/>
-          </li>
+          <a key={index} href={"?query="+search.login}>
+            <li key={index}>
+              <CardRecent user={search} />
+            </li>
+            </a>
         ))}
       </ul>
     </aside>
