@@ -6,11 +6,12 @@ import Main from './layout/main/page';
 import styled from 'styled-components';
 
 const Container = styled.div`
-margin-top: 4rem;
-@media screen and (min-width: 1024px){
-  display: flex;
-  justify-content: space-between;
-}
+  margin-top: 4rem;
+  @media screen and (min-width: 1024px){
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+  }
 `
 
 export default function Home() {
