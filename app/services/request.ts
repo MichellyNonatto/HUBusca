@@ -49,6 +49,7 @@ export async function getGitHubData(username: string): Promise<{ user: GitHubDat
             },
           });
 
+          // Atualizar as linguagens do repositório com as linguagens específicas
           repo.languages = Object.keys(languagesResponse.data);
 
           return repo;

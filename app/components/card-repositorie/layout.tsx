@@ -53,7 +53,7 @@ export default function CardRepositorie({ user, repositories }: CardRepositorieP
                 <p>{repo.description}</p>
                 <CardLeague>
                 {repo.languages.map((language: string, index: number) => (
-                    <p key={index}>{language}</p>
+                    <p>{language}</p>
                 ))}
                 </CardLeague>
               </li>
