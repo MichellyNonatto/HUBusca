@@ -22,7 +22,6 @@ const SearchContainer = styled.form`
     transition: all .1s;
     width: 90%;
     max-width: 45rem;
-    height: min-content;
 
     &:hover,
     &:focus-within {
@@ -36,7 +35,6 @@ const CustomInput = styled.input`
     background-color: ${theme.colors['background-input']};
     border: 2px solid ${theme.colors['background-input']};
     color: ${theme.colors['font-secondary']};
-    height: 100%;
     width: 100%;
     &:focus {
         outline: none;
