@@ -5,6 +5,7 @@ import CardRecent from '@/app/components/card-recent/layout';
 import { theme } from '@/app/theme';
 import { getGitHubData } from '@/app/services/request';
 import { ButtonDelete } from '@/app/components/card-recent/style';
+import { FaRegTrashAlt } from "react-icons/fa";
 
 const Titulo = styled.h4`
   color: ${theme.colors.primary87};
@@ -12,6 +13,11 @@ const Titulo = styled.h4`
   margin: 0;
 `;
 
+const AsideContainer = styled.aside`
+  @media screen and (min-width: 1024px){
+    min-width: 25%;
+  }
+`
 interface GitHubData {
   avatar_url: string;
   location: string;
@@ -72,9 +78,9 @@ export default function Aside() {
   };
 
   return (
-    <aside>
+    <AsideContainer>
       <Titulo>Pesquisas Recentes:</Titulo>
-      <ButtonDelete onClick={handleClearHistory}>Limpar Histórico</ButtonDelete>
+      <ButtonDelete onClick={handleClearHistory}>Limpar Histórico <FaRegTrashAlt/></ButtonDelete>
       <ul>
         {recentSearches.map((search, index) => (
           <a key={index} href={"?query="+search.login}>
@@ -84,6 +90,6 @@ export default function Aside() {
             </a>
         ))}
       </ul>
-    </aside>
+    </AsideContainer>
   );
 }

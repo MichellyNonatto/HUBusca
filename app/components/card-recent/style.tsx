@@ -37,17 +37,20 @@ export const ContainerText = styled.div`
 `
 
 export const ButtonDelete = styled.button`
-    background-color: transparent;
-    background-color: ${theme.colors['primary70']};
+    align-items: center;
+    background-color: #c9184a;
     border: none;
     border-radius: 1.25rem;
     cursor: pointer;
-    font-weight: 700;
-    padding: .5rem;
-    width: 100%;
-    margin: 1rem 0px;
+    display: flex;
+    font-size: .8rem;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 2rem 0px;
     transition: .5s ease-in-out;
+    font-weight: 700;
     &:hover{
        opacity: .8;
     }
+    
 ` 
