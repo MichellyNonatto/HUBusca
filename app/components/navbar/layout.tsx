@@ -1,14 +1,13 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { Logo, NavContainer, Nav, InputSearch, Toggle } from './style';
 import { IoIosMenu, IoMdSearch, IoMdClose } from 'react-icons/io';
-import Aside from '@/app/layout/aside/page';
 
 interface NavbarProps {
   toggleState: boolean;
   toggleHandler: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export default function Navbar({ toggleState, toggleHandler }:NavbarProps) {
-  const [state, setState] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
 
   const inputSearchValues = {

@@ -18,7 +18,7 @@ export default function Home() {
   const [windowWidth, setWindowWidth] = useState(0);
   const [toggleState, setToggleState] = useState(false);
   
-  const toggleHandler = (prevState) => {
+  const toggleHandler = (prevState: boolean) => {
     setToggleState(prevState);
   };
 
