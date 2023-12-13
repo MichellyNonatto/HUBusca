@@ -13,6 +13,7 @@ Com base nessa jornada de aprendizado, vivenciei uma experiência enriquecedora 
 * Styled-components
 * Axios
 * API GitHub REST
+* Dotenv
 
 ## Protótipo do Projeto
 [Protótipo Figma](https://www.figma.com/file/M8LGb0hs8siZ25OZ6TwPeF/HUBusca?type=design&node-id=11%3A1833&mode=design&t=lQK6spY8qyIrgeGE-1)
