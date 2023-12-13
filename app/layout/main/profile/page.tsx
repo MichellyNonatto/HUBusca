@@ -28,6 +28,11 @@ const ButtonBack = styled.a`
     color: ${theme.colors['primary70']};
   }
 `
+const CardContainer = styled.div`
+    @media screen and (max-width: 1024px){
+        width: 100%;
+    }
+`
 
 
 export default function Profile() {
@@ -65,7 +70,7 @@ export default function Profile() {
       <div>
         {githubData !== null ? (
           <>
-            <div onClick={toggleVisibility} style={isProfileVisible ? styles.visible : styles.hidden} >
+            <CardContainer onClick={toggleVisibility} style={isProfileVisible ? styles.visible : styles.hidden} >
               <CardProfile
                 avatar={githubData.user.avatar_url}
                 username={githubData.user.login}
@@ -73,7 +78,7 @@ export default function Profile() {
                 bio={githubData.user.bio}
                 location={githubData.user.location}
               />
-            </div>
+            </CardContainer>
             <div style={isRepositoriesVisible ? styles.hidden : styles.visible}>
               <ButtonBack href='/'><IoArrowBackCircle /></ButtonBack>
               <Repositories />

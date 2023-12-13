@@ -1,8 +1,7 @@
 "use client";
 import styled from "styled-components";
 import { theme } from "@/app/theme";
-
-
+ 
 export const Card = styled.div`
     cursor: pointer;
     background-color: ${theme.colors["background-card"]};
