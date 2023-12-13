@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import CardRecent from '@/app/components/card-recent/layout';
 import { theme } from '@/app/theme';
 import { getGitHubData } from '@/app/services/request';
+import { ButtonDelete } from '@/app/components/card-recent/style';
 
 const Titulo = styled.h4`
   color: ${theme.colors.primary87};
@@ -11,8 +12,14 @@ const Titulo = styled.h4`
   margin: 0;
 `;
 
+interface GitHubData {
+  avatar_url: string;
+  location: string;
+  login: string;
+}
+
 export default function Aside() {
-  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+  const [recentSearches, setRecentSearches] = useState<GitHubData[]>([]);
   const [githubData, setGithubData] = useState<any>(null);
   const [query, setQuery] = useState('');
 
@@ -20,7 +27,7 @@ export default function Aside() {
     const storedSearches = localStorage.getItem('recentSearches');
 
     if (storedSearches) {
-      setRecentSearches(JSON.parse(storedSearches));
+      setRecentSearches(JSON.parse(storedSearches).reverse());
     }
 
     const queryString = window.location.search;
@@ -32,11 +39,13 @@ export default function Aside() {
         const data = await getGitHubData(queryValue || '');
 
         if (data && data.user) {
-          setRecentSearches(prevSearches => {
-            const searchExists = prevSearches.includes(data.user.login);
+          setRecentSearches((prevSearches) => {
+            const searchExists = prevSearches.some(
+              (search) => search.login === data.user.login
+            );
 
             if (!searchExists) {
-              const newRecentSearches = [...prevSearches, data.user.login];
+              const newRecentSearches = [data.user, ...prevSearches];
               localStorage.setItem('recentSearches', JSON.stringify(newRecentSearches));
               return newRecentSearches;
             }
@@ -56,6 +65,7 @@ export default function Aside() {
     }
   }, [query]);
 
+  
   const handleClearHistory = () => {
     setRecentSearches([]);
     localStorage.removeItem('recentSearches');
@@ -64,11 +74,11 @@ export default function Aside() {
   return (
     <aside>
       <Titulo>Pesquisas Recentes:</Titulo>
-      <button onClick={handleClearHistory}>Limpar Histórico</button>
+      <ButtonDelete onClick={handleClearHistory}>Limpar Histórico</ButtonDelete>
       <ul>
         {recentSearches.map((search, index) => (
           <li key={index}>
-            {search}
+            <CardRecent user={search}/>
           </li>
         ))}
       </ul>
