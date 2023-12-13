@@ -34,6 +34,11 @@ const GlobalStyle = createGlobalStyle`
         opacity: .5;
     }
 
+    @media screen and (max-width: 1024px){
+        html {
+            font-size: 8px;
+        }
+    }
 `
 
 export default GlobalStyle;
