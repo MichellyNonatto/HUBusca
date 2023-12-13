@@ -95,10 +95,6 @@ export const InfoContainer: React.FC<InfoProps> = ({ values }) => {
     )
 }
 
-export const NameRepo = styled.h4`
-    font-size: 1.5rem;
-    font-weight: 500;
-`
 
 export const DataContainer = styled.div`
     text-align: end;
@@ -107,6 +103,10 @@ export const DataContainer = styled.div`
     }
 `
 
+export const NameRepo = styled.h4`
+    font-size: 1.5rem;
+    font-weight: 500;
+`
 export const CardLeague = styled.div`
     display: flex;
     gap: 1rem;
