@@ -50,7 +50,7 @@ export const Name = styled.h2`
 `
 
 export const ContainerSubtitle = styled.div<ColorsProps>`
-  align-items: ${({ colorPrimary }) => (colorPrimary ? "flex-end" : "center")};
+  align-items: center;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
@@ -96,7 +96,7 @@ export const InfoContainer: React.FC<InfoProps> = ({ values }) => {
 }
 
 export const NameRepo = styled.h4`
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 500;
 `
 
