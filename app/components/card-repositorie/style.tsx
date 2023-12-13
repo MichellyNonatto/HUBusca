@@ -58,7 +58,6 @@ export const ContainerSubtitle = styled.div<ColorsProps>`
   * {
   color: ${({ colorPrimary }) =>
       colorPrimary ? theme.colors.primary87 : theme.colors.primary70};
-    font-size: 0.8rem;
   }
 `;
 export const Description = styled.p`
@@ -98,7 +97,7 @@ export const InfoContainer: React.FC<InfoProps> = ({ values }) => {
 
 export const DataContainer = styled.div`
     text-align: end;
-    *{
+    p {
         font-size: .8rem;
     }
 `
@@ -111,7 +110,7 @@ export const CardLeague = styled.div`
     display: flex;
     gap: 1rem;
 
-    p{
+    p {
         background: rgba(230, 224, 233, 0.08);
         border-radius: 1.25rem;
         padding: 0.5rem 1rem;
