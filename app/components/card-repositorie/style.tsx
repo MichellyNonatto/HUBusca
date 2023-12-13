@@ -1,24 +1,35 @@
 "use client";
 import styled from "styled-components";
 import { theme } from "@/app/theme";
-import React, { useState } from "react";
+
+interface InfoProps {
+    colorPrimary?: boolean;
+    values: {
+        'icon': React.ReactNode;
+        'number': number;
+        'text': string
+    }
+}
 
 export const Container = styled.div`
-    width: 100%;
-
     @media screen and (min-width: 1024px){
         display: flex;
+        gap: 2rem;
     }
 `
 
 export const ProfileContainer = styled.section`
-  
-
 `
 
 
 export const RepoContainer = styled.section`
-    background-color: green;
+    li:last-child {
+        border-bottom: 1px solid ${theme.colors["background-input"]};
+    }
+   li{
+        border-top: 1px solid ${theme.colors["background-input"]};
+        padding: 2rem 1rem;
+    }
 `
 
 export const Avatar = styled.img`
@@ -35,30 +46,25 @@ export const Name = styled.h2`
     }
 `
 
-export const ContainerSubtitle = styled.div`
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    gap: .5rem;
-    *{
-        color: ${theme.colors.primary70};
-        font-size: .8rem;
-    }
-`
+
+export const ContainerSubtitle = styled.div<InfoProps>`
+  align-items: ${({ colorPrimary }) => (colorPrimary ? "flex-end" : "center")};
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  
+  * {
+    color: ${({ colorPrimary }) =>
+      colorPrimary ? theme.colors.primary87 : theme.colors.primary70};
+    font-size: 0.8rem;
+  }
+`;
 export const Description = styled.p`
     font-size: .75rem;
     @media screen and (min-width: 1024px){
         width: 20.125rem;
     }
 `
-
-interface InfoProps{
-    values:{
-        'icon': React.ReactNode;
-        'number': number;
-        'text': string
-    }
-}
 
 const ContainerValues = styled.div`
     align-items: center;
@@ -76,7 +82,7 @@ const ContainerValues = styled.div`
     }
 `
 export const InfoContainer: React.FC<InfoProps> = ({ values }) => {
-    return(
+    return (
         <ContainerValues>
             <i>
                 {values.icon}
@@ -86,3 +92,26 @@ export const InfoContainer: React.FC<InfoProps> = ({ values }) => {
         </ContainerValues>
     )
 }
+
+export const NameRepo = styled.h4`
+    font-size: 1rem;
+    font-weight: 500;
+`
+
+export const DataContainer = styled.div`
+    text-align: end;
+    *{
+        font-size: .8rem;
+    }
+`
+
+export const CardLeague = styled.div`
+    display: flex;
+    gap: 1rem;
+
+    p{
+        background: rgba(230, 224, 233, 0.08);
+        border-radius: 1.25rem;
+        padding: 0.5rem 1rem;
+    }
+`

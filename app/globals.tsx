@@ -23,6 +23,17 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
     }
 
+    a {
+        text-decoration: none;
+        * {
+            text-decoration: none;
+        }
+    }
+
+    a:hover{
+        opacity: .5;
+    }
+
 `
 
 export default GlobalStyle;

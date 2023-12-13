@@ -14,7 +14,7 @@ interface GitHubData {
 interface Repository {
   name: string;
   description: string;
-  language: string;
+  languages: string[];
   created_at: string;
   pushed_at: string;
 }
@@ -41,8 +41,19 @@ export async function getGitHubData(username: string): Promise<{ user: GitHubDat
       });
 
       if (repositoriesResponse.status === 200) {
-        const repositories = repositoriesResponse.data;
-        
+        const repositories = await Promise.all(repositoriesResponse.data.map(async (repo: Repository) => {
+          // Obter linguagens específicas do repositório
+          const languagesResponse: AxiosResponse<any> = await axios.get(`https://api.github.com/repos/${username}/${repo.name}/languages`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+
+          repo.languages = Object.keys(languagesResponse.data);
+
+          return repo;
+        }));
+
         return { user: { id, name, avatar_url, bio, location, login, followers, public_repos }, repositories };
       } else {
         throw new Error(`Erro na requisição à API do GitHub para obter repositórios. Status: ${repositoriesResponse.status}`);

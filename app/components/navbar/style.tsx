@@ -51,6 +51,10 @@ const CustonIcon = styled.i`
 `
 
 export const Nav = styled.nav`
+    position: sticky;
+    top: 0px;
+    background-color: ${theme.colors['background-primary']};
+    z-index: 1;
     display: inline-block;
     gap: 25%;
     width: 100%;
