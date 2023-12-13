@@ -41,7 +41,7 @@ export default function CardRepositorie({ user, repositories }: CardRepositorieP
       <RepoContainer>
         <ul>
           {repositories.map((repo: any) => (
-            <a href={repo.html_url}>
+            <a href={repo.html_url} key={repo.name}>
               <li key={repo.name}>
                 <ContainerSubtitle colorPrimary={true}>
                   <NameRepo>{repo.name}</NameRepo>
@@ -52,9 +52,9 @@ export default function CardRepositorie({ user, repositories }: CardRepositorieP
                 </ContainerSubtitle>
                 <p>{repo.description}</p>
                 <CardLeague>
-                {repo.languages.map((language: string, index: number) => (
-                    <p>{language}</p>
-                ))}
+                  {repo.languages.map((language: string, index: number) => (
+                    <p key={index}>{language}</p>
+                  ))}
                 </CardLeague>
               </li>
             </a>

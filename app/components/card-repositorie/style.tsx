@@ -3,12 +3,15 @@ import styled from "styled-components";
 import { theme } from "@/app/theme";
 
 interface InfoProps {
-    colorPrimary?: boolean;
     values: {
         'icon': React.ReactNode;
         'number': number;
         'text': string
     }
+}
+
+interface ColorsProps{
+    colorPrimary?: boolean;
 }
 
 export const Container = styled.div`
@@ -46,15 +49,14 @@ export const Name = styled.h2`
     }
 `
 
-
-export const ContainerSubtitle = styled.div<InfoProps>`
+export const ContainerSubtitle = styled.div<ColorsProps>`
   align-items: ${({ colorPrimary }) => (colorPrimary ? "flex-end" : "center")};
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   
   * {
-    color: ${({ colorPrimary }) =>
+  color: ${({ colorPrimary }) =>
       colorPrimary ? theme.colors.primary87 : theme.colors.primary70};
     font-size: 0.8rem;
   }
