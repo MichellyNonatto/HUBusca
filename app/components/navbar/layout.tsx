@@ -32,7 +32,9 @@ export default function Navbar({ toggleState, toggleHandler }:NavbarProps) {
   return (
     <Nav>
       <NavContainer>
+        <a href='/'>
         <Logo>HUBusca</Logo>
+        </a>
         {windowWidth < 1024 && (
           <Toggle onClick={() => toggleHandler((prevState) => !prevState)}>
             {!toggleState ? <IoIosMenu /> : <IoMdClose />}
