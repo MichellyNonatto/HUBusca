@@ -29,6 +29,7 @@ const Description = styled.p`
     color: ${theme.colors['font-secondary']};
     margin: auto;
     margin-bottom: 2rem;
+    font-weight: 300;
     @media screen and (min-width: 1024px){
         max-width: 60%;
     }

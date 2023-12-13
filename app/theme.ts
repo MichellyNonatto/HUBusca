@@ -18,7 +18,7 @@ export const theme: Theme = {
         'background-input': '#EEE6EA',
         'background-card': '#1E1B1E',
         'font-primary': '#fff',
-        'font-secondary': '#4C444C',
+        'font-secondary': '#F5F5F5',
         'primary': '#9328B9',
         'primary70': '#E287FF',
         'primary87': '#F6CCFF',

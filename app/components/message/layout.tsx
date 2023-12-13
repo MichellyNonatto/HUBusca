@@ -2,9 +2,9 @@ import { Text } from "./style";
 
 export default function Message(){
     const textValues = {
-        'title': 'Perfis do GitHub',
-        'subtitle': 'Obtenha as informações que você prescisa',
-        'description': 'Para começar sua pesquisa, utilize a barra de “Pesquisar” acima e insira o nome de um perfil registrado no GitHub. '
+        'title': 'Explorador de Perfis GitHub',
+        'subtitle': 'Encontre rapidamente as informações que você precisa',
+        'description': 'Inicie sua pesquisa inserindo o nome de usuário do GitHub na barra de pesquisa acima. Explore perfis, repositórios e contribuições de forma eficiente para obter insights valiosos sobre os desenvolvedores da comunidade.'        
     }
     return(
         <Text values={textValues}/>
