@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Desafio Click Soft
 
-## Getting Started
+## Sobre o Projeto
 
-First, run the development server:
+Como parte da avaliação técnica, foi proposto o desafio de desenvolver um site com o propósito de realizar pesquisas de perfis de usuárias no GitHub, utilizando seus apelidos (Nicknames) como referência. Este projeto tem como objetivo proporcionar uma análise detalhada dos perfis, como repositórios e outras informações relevantes. Durante o desenvolvimento deste site, adotei uma abordagem meticulosa, utilizando tecnologias modernas e práticas de programação eficientes para garantir uma experiência de usuária otimizada.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Com base nessa jornada de aprendizado, vivenciei uma experiência enriquecedora com este desafio, consolidando meu conhecimento em programação front-end e continuando a aprimorar minhas habilidades. Estou entusiasmada em compartilhar os resultados deste projeto, que não apenas demonstram minhas competências técnicas, mas também refletem meu compromisso com a excelência no desenvolvimento web.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![image](https://github.com/MichellyNonatto/HUBusca/assets/101263547/23da5671-48c5-4dfd-9aff-cf907f4c6e44)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tecnologias Utilizadas 
+* NextJs
+* Styled-components
+* Axios
+* API GitHub REST
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Protótipo do Projeto
+[Protótipo Figma](https://www.figma.com/file/M8LGb0hs8siZ25OZ6TwPeF/HUBusca?type=design&node-id=11%3A1833&mode=design&t=lQK6spY8qyIrgeGE-1)
