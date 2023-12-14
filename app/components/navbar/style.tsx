@@ -34,7 +34,7 @@ const CustomInput = styled.input`
     align-items: center;
     background-color: ${theme.colors['background-input']};
     border: 2px solid ${theme.colors['background-input']};
-    color: ${theme.colors['font-secondary']};
+    color: ${theme.colors['font-dark']};
     width: 100%;
     &:focus {
         outline: none;
@@ -46,7 +46,7 @@ const CustonIcon = styled.i`
     text-align: center;
     * {
         vertical-align: middle;
-       color: ${theme.colors['font-secondary']};
+       color: ${theme.colors['font-dark']};
     }
 `
 
