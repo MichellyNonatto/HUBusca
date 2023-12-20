@@ -109,7 +109,7 @@ export const NameRepo = styled.h4`
 export const CardLeague = styled.div`
     display: flex;
     gap: 1rem;
-
+    flex-wrap: wrap;
     p {
         background: rgba(230, 224, 233, 0.08);
         border-radius: 1.25rem;
